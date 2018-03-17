@@ -43,15 +43,15 @@ List containers
 
 sudo docker ps
 
-sudo docker exec -it <container-id> /bin/bash
+sudo docker exec -it (container-id) /bin/bash
 
 This command will take you inside container with root permissions where we will maintain the environment and so that you can package it and take it to any other machine(be it your local machine)
 
 Step 7
 
-sudo apt-get update
+apt-get update
 
-sudo apt-get install vim
+apt-get install vim
 
 Step 8
 
