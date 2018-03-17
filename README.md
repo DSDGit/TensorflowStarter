@@ -34,7 +34,7 @@ git clone https://github.com/DataScienceDelhi/dsdevent1.git
 Step 5
 Start a container with tensorflow tag 1.2.0
 
-sudo docker run -it -d -v `pwd`:/notebooks tensorflow/tensorflow:1.2.0 /bin/bash
+sudo docker run -it -d -v \`pwd\`:/notebooks tensorflow/tensorflow:1.2.0 /bin/bash
 
 After you get a running jupyter and a token screen close this window directly
 
