@@ -55,7 +55,7 @@ apt-get install vim
 
 Step 8
 
-cd dsdevent1
+cd TensorflowStarter
 
 Step 9 
 Install Gcloud sdk
