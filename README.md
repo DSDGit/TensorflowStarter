@@ -24,6 +24,8 @@ You can have a look at the commands(https://www.digitalocean.com/community/tutor
 
 6. sudo systemctl status docker
 
+(press colon(:) and then 'q' and then enter key to exit)
+
 
 Step 4
 Clone the repository
@@ -82,7 +84,11 @@ pip install -r requirements.txt
 Step 11
 Create a bucket in your GCS as per the below instructions
 Upload dict.txt, train_set.csv, eval_set.csv and preprocessed files to directly jump to Cloud ML Training step
-declare USER='puneet'
+
+```
+declare USER='yourname'
+
+```
 so bucket name should be flower_${USER}
 ```
 gsutil cp flower1/dict.txt gs://flower_${USER}/
@@ -95,7 +101,7 @@ Step 12
 declare PROJECT=$(gcloud config list project --format "value(core.project)")
 ```
 ```
-declare JOB_ID="flowers_puneet_$(date +%Y%m%d_%H%M%S)"
+declare JOB_ID="flowers_${USER}_$(date +%Y%m%d_%H%M%S)"
 ```
 ```
 declare BUCKET="gs://flower_${USER}"
