@@ -28,7 +28,7 @@ You can have a look at the commands(https://www.digitalocean.com/community/tutor
 Step 4
 Clone the repository
 
-git clone https://github.com/DataScienceDelhi/dsdevent1.git
+git clone https://github.com/DSDGit/TensorflowStarter.git
 
 
 Step 5
