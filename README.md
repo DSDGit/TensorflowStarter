@@ -3,6 +3,7 @@ Image classification task with Tensorflow at scale on Google cloud platform alon
 
 Step 1
 Create a VM instance(lets say Ubuntu 16.04 LTS) on the cloud(a small machine with 1 core and 3.75 GB ram would work)
+Also ensure that during the VM setup in **Compute Engine**, in **Identity and API access**, **Allow full access to all Cloud APIs** option is selected and in **Firewall**, **Allow HTTP traffic** and **Allow HTTPS traffic** are checked.
 
 Step 2
 SSH into the machine from the browser
@@ -84,10 +85,12 @@ pip install -r requirements.txt
 Step 11
 Create a bucket in your GCS as per the below instructions
 Upload dict.txt, train_set.csv, eval_set.csv and preprocessed files to directly jump to Cloud ML Training step
+**Replace with any name, say rishi in all smalls**
 ```
-declare USER='yourname'
+declare USER=yourname
 ```
-so bucket name should be flower_${USER}
+
+so bucket name should be flower_${USER} 
 ```
 gsutil cp flower1/dict.txt gs://flower_${USER}/
 gsutil cp flower1/train_set.csv gs://flower_${USER}/
