@@ -89,16 +89,6 @@ Upload dict.txt, train_set.csv, eval_set.csv and preprocessed files to directly 
 ```
 declare USER=yourname
 ```
-
-Now, go to **Storage > Browser** and create a new bucket with name as flower_yourname (for eg. flower_rishi in this case)
-so bucket name should be flower_${USER} where USER is variable containing your name as value. 
-```
-gsutil cp flower1/dict.txt gs://flower_${USER}/
-gsutil cp flower1/train_set.csv gs://flower_${USER}/
-gsutil cp flower1/eval_set.csv gs://flower_${USER}/
-```
-
-**Step 12**
 ```
 declare PROJECT=$(gcloud config list project --format "value(core.project)")
 ```
@@ -116,8 +106,18 @@ declare MODEL_NAME=flower
 ```
 ```
 declare VERSION_NAME=v1
-
 ```
+
+**Step 12**
+
+Now, go to **Storage > Browser** and create a new bucket with name as flower_yourname (for eg. flower_rishi in this case)
+so bucket name should be flower_${USER} where USER is variable containing your name as value. 
+```
+gsutil cp flower1/dict.txt gs://flower_${USER}/
+gsutil cp flower1/train_set.csv gs://flower_${USER}/
+gsutil cp flower1/eval_set.csv gs://flower_${USER}/
+```
+
 
 **Step 13**
 ```
@@ -162,3 +162,43 @@ python -c 'import base64, sys, json; img = base64.b64encode(open(sys.argv[1], "r
 gcloud ml-engine predict --model ${MODEL_NAME} --json-instances request.json
 
 =================================
+````
+
+
+**Note:**
+
+**If at any instance, your VM get disconnected**, reconnect the VM and press up button on your keyboard to get the last executed command
+```
+sudo docker exec -it (container-id) /bin/bash
+```
+and hit enter to again enter into your docker.
+
+Now again run, 
+```
+cd TensorflowStarter
+```
+
+Again, re-run the following: **(replace yourname with the same name you gave earlier)**
+```
+declare USER=yourname
+```
+```
+declare PROJECT=$(gcloud config list project --format "value(core.project)")
+```
+```
+declare JOB_ID="flowers_${USER}_$(date +%Y%m%d_%H%M%S)"
+```
+```
+declare BUCKET="gs://flower_${USER}"
+```
+```
+declare DICT_FILE="${BUCKET}/dict.txt"
+```
+```
+declare MODEL_NAME=flower
+```
+```
+declare VERSION_NAME=v1
+```
+
+
