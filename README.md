@@ -35,9 +35,9 @@ git clone https://github.com/DSDGit/TensorflowStarter.git
 
 
 **Step 5**
-Start a container with tensorflow tag 1.2.0
+Start a container with tensorflow tag 1.6.0
 
-sudo docker run -it -d -v \`pwd\`:/notebooks tensorflow/tensorflow:1.2.0 /bin/bash
+sudo docker run -it -d -v \`pwd\`:/notebooks tensorflow/tensorflow:1.6.0 /bin/bash
 
 After you get a running jupyter and a token screen close this window directly
 
@@ -137,7 +137,7 @@ gsutil cp -r flower1/* gs://flower_${USER}/
 **Step 16**
 ```
 # Training on CloudML
-gcloud ml-engine jobs submit training "$JOB_ID" --stream-logs --module-name trainer.task --package-path trainer --staging-bucket "${BUCKET}" --region us-central1 --runtime-version=1.2 -- --output_path "${BUCKET}/training" --eval_data_paths "${BUCKET}/preproc/eval*" --train_data_paths "${BUCKET}/preproc/train*"
+gcloud ml-engine jobs submit training "$JOB_ID" --stream-logs --module-name trainer.task --package-path trainer --staging-bucket "${BUCKET}" --region us-central1 --runtime-version=1.6 -- --output_path "${BUCKET}/training" --eval_data_paths "${BUCKET}/preproc/eval*" --train_data_paths "${BUCKET}/preproc/train*"
 ```
 
 **Step 17**
@@ -145,7 +145,7 @@ gcloud ml-engine jobs submit training "$JOB_ID" --stream-logs --module-name trai
 gcloud ml-engine models create "$MODEL_NAME" --regions us-central1
 ```
 ```
-gcloud ml-engine versions create "$VERSION_NAME" --model "$MODEL_NAME" --origin "${BUCKET}/training/model" --runtime-version=1.2
+gcloud ml-engine versions create "$VERSION_NAME" --model "$MODEL_NAME" --origin "${BUCKET}/training/model" --runtime-version=1.6
 ```
 ```
 gcloud ml-engine versions set-default "$VERSION_NAME" --model "$MODEL_NAME"
