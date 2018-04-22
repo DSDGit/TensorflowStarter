@@ -165,7 +165,13 @@ gcloud ml-engine predict --model ${MODEL_NAME} --json-instances request.json
 ````
 
 
-**Note:**
+
+
+
+
+
+
+**Important Note:**
 
 **If at any instance, your VM get disconnected**, reconnect the VM and press up button on your keyboard to get the last executed command
 ```
