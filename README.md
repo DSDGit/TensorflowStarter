@@ -85,12 +85,13 @@ pip install -r requirements.txt
 Step 11
 Create a bucket in your GCS as per the below instructions
 Upload dict.txt, train_set.csv, eval_set.csv and preprocessed files to directly jump to Cloud ML Training step
-**Replace with any name, say rishi in all smalls**
+**Replace with your name in all smalls, say declare USER=rishi (in all smalls)**
 ```
 declare USER=yourname
 ```
 
-so bucket name should be flower_${USER} 
+Now, go to **Storage > Browser** and create a new bucket with name as flower_yourname (for eg. flower_rishi in this case)
+so bucket name should be flower_${USER} where USER is variable containing your name as value. 
 ```
 gsutil cp flower1/dict.txt gs://flower_${USER}/
 gsutil cp flower1/train_set.csv gs://flower_${USER}/
