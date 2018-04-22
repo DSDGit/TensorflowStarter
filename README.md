@@ -161,7 +161,6 @@ python -c 'import base64, sys, json; img = base64.b64encode(open(sys.argv[1], "r
 ```
 gcloud ml-engine predict --model ${MODEL_NAME} --json-instances request.json
 
-=================================
 ````
 
 
@@ -171,7 +170,8 @@ gcloud ml-engine predict --model ${MODEL_NAME} --json-instances request.json
 
 
 
-**Important Note:**
+**
+===========================================================Important Note:======================================================================**
 
 **If at any instance, your VM get disconnected**, reconnect the VM and press up button on your keyboard to get the last executed command
 ```
